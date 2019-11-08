@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using App1.Constant;
+using App1.Entity;
+using Newtonsoft.Json;
+
+namespace App1.Service
+{
+    class SongService : ISongService
+    {
+        public Song CreateSong(Song song, string token)
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue(token);
+                var dataToSend = JsonConvert.SerializeObject(song);
+                var content = new StringContent(dataToSend, Encoding.UTF8, "application/json");
+                var response = httpClient.PostAsync(Api.SONG_CREATE_URL, content).GetAwaiter().GetResult();
+                var ISsong = response.Content.ReadAsStringAsync().Result;
+                return song;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public List<Song> GetAllSong(MemberCredential memberCredential)
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(memberCredential.token);
+            var response = httpClient.GetAsync(Api.SONG_GET_ALL).GetAwaiter().GetResult();
+            return JsonConvert.DeserializeObject<List<Song>>(response.Content.ReadAsStringAsync().Result);
+        }
+
+        public List<Song> GetMineSongs(MemberCredential memberCredential)
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue(memberCredential.token);
+            var response = httpClient.GetAsync(Api.SONG_GET_MINE).GetAwaiter().GetResult();
+            return JsonConvert.DeserializeObject<List<Song>>(response.Content.ReadAsStringAsync().Result);
+        }
+    }
+}

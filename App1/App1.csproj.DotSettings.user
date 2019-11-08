@@ -1,0 +1,5 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=VIEW_005CIMG_005CHINH/@EntryIndexedValue">view\img\hinh</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=VIEW_005CIMG_005CHINH_002DANH_002DNANCY_002DHINH_002DNEN_002DNANCY_002DDEP_002DNHAT_002DMOI_002DNHAT_002D32_002EJPG/@EntryIndexedValue">view\img\hinh-anh-nancy-hinh-nen-nancy-dep-nhat-moi-nhat-32.jpg</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=VIEW_005CIMG_005CHINH/@EntryIndexedValue">view\img\hinh</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=VIEW_005CIMG_005CHINH_002DANH_002DNANCY_002DHINH_002DNEN_002DNANCY_002DDEP_002DNHAT_002DMOI_002DNHAT_002D32_002EJPG/@EntryIndexedValue">view\img\hinh-anh-nancy-hinh-nen-nancy-dep-nhat-moi-nhat-32.jpg</s:String></wpf:ResourceDictionary>
